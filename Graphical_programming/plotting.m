@@ -1,0 +1,16 @@
+x = 0:0.01:60;
+y= sin(1.4*pi*x.^0.5);
+y2= cos(1.4*pi*x.^0.5);
+figure(1);
+subplot(2,1,1);
+plot(x,y);
+title('Sine wave');
+ylabel('Amplitude');
+xlabel('Time');
+legend('sine wave');
+subplot(2,1,2);
+plot(x,y2);
+title('Cosine wave');
+ylabel('Amplitude');
+xlabel('Time');
+legend('cosine wave');
