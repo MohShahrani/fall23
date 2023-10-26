@@ -1,5 +1,24 @@
 clear all
-down32 = imread("DIP/down32.tif");
+mat = randi(255,[512 512]);
+bilin_mat = zeros(20,20);
+
+x_index=1;
+for x=1:2:21
+    temp(x,:) = mat(x_index,:);
+    temp(x+1,:) = zeros(11,1);
+    x_index = x_index +1;
+end
+
+y_index=1;
+for y=1:2:21
+    temp2(:,y) = temp(:,y_index);
+    temp2(:,y+1) = zeros(1,22);
+    y_index = y_index +1;
+end
+
+%%
+clear all
+down32 = randi(255,[512 512]);
 bilin = zeros(512,512);
 for x = 1 : 16 : 512
     for y = 1 : 16 : 512
@@ -43,9 +62,8 @@ for x = 1 : 512
         bilin(x,y)=((x2-x)/(x2-x1))*f1 + ((x-x1)/(x2-x1))*f2;
     end
 end
-%%
 figure(1);
 subplot(2,1,1)
-imshow(down32)
+image(down32)
 subplot(2,1,2)
-imshow(bilin,[])
+image(image)
