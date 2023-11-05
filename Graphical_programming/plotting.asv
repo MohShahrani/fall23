@@ -1,9 +1,0 @@
-x = 0:0.01:60;
-y= sin(1.4*pi*x.^0.5);
-y2= cos(1.4*pi*x.^0.5);
-figure(1);
-plot(x,y,'r--',x,y2,'b.');
-title('Sine wave');
-ylabel('Amplitude');
-xlabel('Time');
-legend('sine wave','cosine wave');

@@ -1,0 +1,14 @@
+data = load("london_weather.mat");
+weather = data.london_weather;
+y = weather(1:365,7);
+y2= weather(1:365,5)
+x = 1:1:365;
+
+figure(1);
+plot(x,y,x,y2);
+title('Temp in London')
+xlabel("days")
+ylabel("temp")
+
+marks = [20 20 15 18 12 20 19 8 5];
+

@@ -19,6 +19,7 @@ for x = 1 : 16 : 512
 end
 
 %%
+
 for x = 1 : 512
     if(x>1 && ismember(x,values))
         xIndex = xIndex+1;
@@ -38,6 +39,7 @@ for x = 1 : 512
                 y2=values(yIndex+1);
             end
         end
+
         f1=((y2-y)/(y2-y1))*bilin(x1,y1) + ((y-y1)/(y2-y1))*bilin(x1,y2);
         f2=((y2-y)/(y2-y1))*bilin(x2,y1) + ((y-y1)/(y2-y1))*bilin(x2,y2);
         bilin(x,y)=((x2-x)/(x2-x1))*f1 + ((x-x1)/(x2-x1))*f2;
